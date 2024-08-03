@@ -1,0 +1,23 @@
+.Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  margin: 10px;
+
+  .Img {
+    height: 250px;
+    width: 250px;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))
+  }
+
+  .Title {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+  }
+}

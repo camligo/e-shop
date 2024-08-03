@@ -1,0 +1,25 @@
+.CarouselContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+
+  .CarouselContent {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+
+    .CarouselInner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  .CarouselItem {
+    flex: 1 0 33.33%;
+    max-width: 33.33%;
+    box-sizing: border-box;
+  }
+}

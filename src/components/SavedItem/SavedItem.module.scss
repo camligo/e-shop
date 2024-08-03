@@ -1,0 +1,11 @@
+.SaveLogo {
+  background: blue;
+
+  &_true {
+    background: green;
+  }
+
+  &_false {
+    background: red;
+  }
+}
