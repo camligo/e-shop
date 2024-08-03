@@ -1,0 +1,13 @@
+.CartIconContainer {
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  width: 75px;
+  display: flex;
+}
+
+.CartIcon {
+  background: transparent;
+  height: 20px;
+  object-fit: cover;
+}

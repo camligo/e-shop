@@ -1,5 +1,7 @@
+@use "../../styles/variables.scss" as v;
+
 .BtnPrimary {
-  background: green;
+  background: v.$primary;
   color: white;
   width: 80%;
   border-radius: 15px;
@@ -8,7 +10,7 @@
   font-family: "Mulish", sans-serif;
   margin-block: 0.5rem;
   box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
-  border: 1px solid green;
+  border: 1px solid v.$primary;
 
   &:hover {
     background: rgb(1, 145, 1);

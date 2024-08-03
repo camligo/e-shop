@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss" as v;
+
 .CardContainer {
   display: flex;
   flex-direction: column;
@@ -5,14 +7,15 @@
   justify-content: center;
   box-sizing: border-box;
   overflow: hidden;
-  height: 300px;
+  height: 350px;
   width: 180px;
   border-radius: 5px;
   box-shadow: 0px 4px 8px 0px rgba(58, 57, 57, 0.4);
+  background: v.$bg;
 
   &:hover {
-    background: rgba(128, 128, 128, 0.146);
-    transition: 0.3s;
+    transform: scale(1.01);
+    transition: transform 0.2s ease-out;
   }
 
   .ProductName {
@@ -20,12 +23,12 @@
   }
 
   .ImgContainer {
-    height: 100px;
+    height: 120px;
 
     .ProductImg {
       height: 100%;
       width: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
   }
 
@@ -36,9 +39,8 @@
     width: 100%;
   }
 
-
   .BtnPrimary {
-    background: green;
+    background: v.$primary;
     color: white;
     width: 80%;
     border-radius: 15px;

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getCategoryById, getFoodsByCategory } from "../../services/food-service";
 import { useParams } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import styles from './CategoryPage.module.scss'
 
 const CategoryPage = () => {
   const { id } = useParams();
@@ -37,9 +38,9 @@ const CategoryPage = () => {
   }
 
   return (
-    <div>
+    <div className={styles.PageContainer}>
       <h1>{category.name}</h1>
-      <div>
+      <div className={styles.ProductsContainer}>
         {foods.map(food => (
           <ProductCard key={food.id} food={food} />
         ))}

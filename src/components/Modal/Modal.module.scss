@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss" as v;
+
 .ModalOverlay {
   position: fixed;
   top: 0;
@@ -15,7 +17,7 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
-    background: white;
+    background: v.$bg;
     padding: 20px;
     border-radius: 8px;
     max-width: 800px;
@@ -24,9 +26,8 @@
     position: relative;
 
     .ProductImg {
-      height: 100px;
+      height: 300px;
       width: auto;
-      padding: 10px;
     }
 
     .BtnContainer {
@@ -42,7 +43,7 @@
       right: 10px;
       background: red;
       border-radius: 5px;
-      color: white;
+      color: v.$tertiary;
       border: none;
       padding: 5px 10px;
       cursor: pointer;

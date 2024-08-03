@@ -15,6 +15,7 @@ const ProductCard = ({ food, onClick }) => {
         />
       </div>
       <h3 className={styles.ProductName}>{food.name}</h3>
+      <h4>${food.price} ({food.weight})</h4>
       <div onClick={(e) => e.stopPropagation()} className={styles.BtnContainer}>
         <Counter initialValue={0} capacity={food.stockAmount} />
         <BtnPrimary>Add to Cart</BtnPrimary>
