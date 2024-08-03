@@ -81,3 +81,11 @@ export const saveProduct = async (id, isSaved) => {
     console.error("couldn't update document", error)
   }
 }
+
+export const getSavedProducts = async () => {
+    const savedFoodsRef = collection(db, "foods")
+    const savedProductsQuery = query(savedFoodsRef, where("saved", "==", true))
+
+    const querySnapshot = await getDocs(savedProductsQuery);
+    return querySnapshot.docs.map((doc => ({ id: doc.id, ...doc.data() })))
+}

@@ -3,6 +3,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
   height: 300px;
-  width: 220px;
+  width: 180px;
+  border: black 1px solid;
+  border-radius: 5px;
+
+  &:hover {
+    background: rgba(128, 128, 128, 0.146);
+    transition: 0.3s;
+  }
+
+  .ImgContainer {
+    height: 100px;
+
+    .ProductImg {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
 }
