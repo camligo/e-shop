@@ -21,8 +21,10 @@ const ProductsPage = () => {
   }
 
   return (
-    <>
-      <h1>Products</h1>
+    <section className={styles.PageContainer}>
+      <div>
+        <h1 className={styles.MainHeading}>All Products</h1>
+      </div>
       {foods.length > 0 && (
         <div className={styles.ProductsContainer}>
           {foods.map((food) => (
@@ -31,7 +33,7 @@ const ProductsPage = () => {
         </div>
       )}
       <Modal product={selectedProduct} onClose={handleCloseModal}/>
-    </>
+    </section>
   )
 }
 

@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import styles from "./SavedItem.module.scss";
 import { saveProduct } from "../../services/food-service";
 
-const SavedItem = ({ food }) => {
+
+const SavedItem = ({ food, isSavedPage }) => {
   const [isSaved, setIsSaved] = useState(food.saved);
 
   const handleClick = () => {
@@ -12,22 +13,25 @@ const SavedItem = ({ food }) => {
   useEffect(() => {
     if (food) {
       saveProduct(food.id, isSaved);
-      console.log(isSaved);
     }
   }, [isSaved]);
 
-  const classes = `${styles.SaveLogo} ${
-    isSaved ? styles.SaveLogo_true : styles.SaveLogo_false
+  const classes = `${styles.BtnSecondary} ${
+    isSaved ? styles.BtnSecondary_true : styles.BtnSecondary_false
   }`;
 
+  if (isSavedPage) {
+    return null;
+  }
+
   return (
-    <div>
+    <>
       <button
         onClick={handleClick}
         className={classes}>
-          Save to List
+          {isSaved ? "Added to List!" : "Save to List"}
       </button>
-    </div>
+    </>
   )
 }
 

@@ -1,6 +1,7 @@
 import styles from './SavedListPage.module.scss'
 import { getSavedProducts } from '../../services/food-service'
 import { useState, useEffect } from "react"
+import SavedProductCard from '../../components/SavedProductCard/SavedProductCard'
 
 const SavedListPage = () => {
   const [savedProducts, setSavedProducts] = useState([]);
@@ -13,21 +14,28 @@ const SavedListPage = () => {
     fetchSavedProducts();
   }, []);
 
+  const handleRemoveProduct = (productId) => {
+    setSavedProducts(savedProducts.filter((product => product.id != productId)))
+  };
+
   return (
-    <div>
+    <section className={styles.PageContainer}>
       <h2>Saved Products</h2>
-      <div>
+      <div className={styles.ListContainer}>
         {savedProducts.length > 0 ? (
           savedProducts.map((product) => (
-            <div key={product.id}>
-              <h3>{product.name}</h3>
-            </div>
+            <SavedProductCard
+              key={product.id}
+              food={product}
+              onRemove={handleRemoveProduct}
+              isSavedPage={true}
+            />
           ))
         ) : (
           <p>You don't have any saved products yet.</p>
         )}
       </div>
-    </div>
+    </section>
   )
 }
 

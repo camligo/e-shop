@@ -1,24 +1,16 @@
-.BtnSecondary {
+.BtnPrimary {
   background: green;
   color: white;
   width: 80%;
   border-radius: 15px;
   padding: 5px 10px;
-  border: 1px solid green;
+  border: none;
   font-family: "Mulish", sans-serif;
+  margin-block: 0.5rem;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+  border: 1px solid green;
 
   &:hover {
     background: rgb(1, 145, 1);
-    color: white;
-  }
-
-  &_true {
-    background: white;
-    color: green;
-  }
-
-  &_false {
-    background: white;
-    color: green;
   }
 }

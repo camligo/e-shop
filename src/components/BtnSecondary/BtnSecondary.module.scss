@@ -1,11 +1,13 @@
 .BtnSecondary {
-  background: green;
-  color: white;
+  background: white;
+  color: green;
   width: 80%;
   border-radius: 15px;
   padding: 5px 10px;
   border: 1px solid green;
   font-family: "Mulish", sans-serif;
+  margin-block: 0.5rem;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
 
   &:hover {
     background: rgb(1, 145, 1);
@@ -19,6 +21,5 @@
 
   &_false {
     background: white;
-    color: green;
   }
 }

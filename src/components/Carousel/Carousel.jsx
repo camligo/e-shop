@@ -13,7 +13,7 @@ const Carousel = ({ children }) => {
     setStartIndex((startIndex + 1) % length);
   }
 
-  // create an array of current 3 cards to display absed on startIndex
+  // create an array of current 3 cards to display based on startIndex
   const getCards = () => {
     const cards = [];
     for (let i = 0; i < 3; i++) {
@@ -23,8 +23,14 @@ const Carousel = ({ children }) => {
   }
 
   return (
-    <div className={styles.CarouselContainer}>
-      <button onClick={handlePreviousCard}>Prev</button>
+    <section className={styles.CarouselContainer}>
+      <button onClick={handlePreviousCard} className={styles.BtnArrow}>
+        <img
+          src="./public/arrow-prev.svg"
+          alt="Arrow left"
+          className={styles.IconArrow}
+        />
+      </button>
       <div className={styles.CarouselContent}>
         <div className={styles.CarouselInner}>
           {getCards().map((card, index) => (
@@ -34,8 +40,14 @@ const Carousel = ({ children }) => {
           ))}
         </div>
       </div>
-      <button onClick={handleNextCard}>Next</button>
-    </div>
+      <button onClick={handleNextCard} className={styles.BtnArrow}>
+        <img
+          src="./public/arrow-next.svg"
+          alt="Arrow right"
+          className={styles.IconArrow}
+        />
+      </button>
+    </section>
   )
 }
 

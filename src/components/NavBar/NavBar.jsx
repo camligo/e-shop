@@ -3,23 +3,25 @@ import styles from './NavBar.module.scss'
 import Cart from '../Cart/Cart'
 
 const NavBar = () => {
-
-
   return (
-    <nav className={styles.NavContainer}>
-      <NavLink to="/" className={styles.NavLink}>
-        Home
-      </NavLink>
-      <NavLink to="/products" className={styles.NavLink}>
-        Browse Products
-      </NavLink>
-      <NavLink to="/products/saved" className={styles.NavLink}>
-        Saved List
-      </NavLink>
+  <header>
+    <nav className={styles.Container}>
+      <div className={styles.NavContainer}>
+        <NavLink to="/" className={styles.NavItem}>
+          Home
+        </NavLink>
+        <NavLink to="/products" className={styles.NavItem}>
+          Browse Products
+        </NavLink>
+        <NavLink to="/products/saved" className={styles.NavItem}>
+          Saved List
+        </NavLink>
+      </div>
       <div className={styles.CartContainer}>
         <Cart />
       </div>
     </nav>
+  </header>
   )
 }
 

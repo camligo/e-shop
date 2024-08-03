@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  overflow: hidden;
   width: 100%;
   position: relative;
 
@@ -21,5 +20,21 @@
     flex: 1 0 33.33%;
     max-width: 33.33%;
     box-sizing: border-box;
+  }
+
+  .BtnArrow {
+    height: 50px;
+    object-fit: contain;
+    background: transparent;
+    border: none;
+
+    .IconArrow {
+      height: 100%;
+
+      &:hover {
+        transform: scale(1.2);
+        transition: all 0.4s ease-in-out;
+      }
+    }
   }
 }

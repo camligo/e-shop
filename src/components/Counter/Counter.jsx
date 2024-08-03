@@ -18,11 +18,19 @@ const Counter = ({ initialValue = 0, capacity }) => {
 
   return (
     <div className={styles.CounterContainer}>
-      <button onClick={handleDecrement} disabled={count <= initialValue}>
+      <button
+        onClick={handleDecrement}
+        disabled={count <= initialValue}
+        className={styles.CounterBtn}
+      >
         -
       </button>
       <p>{count}</p>
-      <button onClick={handleIncrement} disabled={count >= capacity}>
+      <button
+        onClick={handleIncrement}
+        disabled={count >= capacity}
+        className={styles.CounterBtn}
+      >
         +
       </button>
     </div>

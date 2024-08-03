@@ -1,12 +1,20 @@
-import styles from "./ProductCard.module.scss";
+import styles from "./SavedProductCard.module.scss";
 import Counter from "../Counter/Counter";
 import SavedItem from "../SavedItem/SavedItem";
 import BtnPrimary from "../BtnPrimary/BtnPrimary";
 
-const ProductCard = ({ food, onClick }) => {
+const SavedProductCard = ({ food, onRemove, isSavedPage }) => {
+  const handleRemove = (e) => {
+    onRemove(food.id);
+  };
 
   return (
-    <article className={styles.CardContainer} onClick={onClick}>
+    <article className={styles.CardContainer}>
+      <button
+        className={styles.BtnClose}
+        onClick={handleRemove}>
+        x
+      </button>
       <div className={styles.ImgContainer}>
         <img
           className={styles.ProductImg}
@@ -14,15 +22,14 @@ const ProductCard = ({ food, onClick }) => {
           alt={food.name}
         />
       </div>
-      <h3 className={styles.ProductName}>{food.name}</h3>
+      <h3>{food.name}</h3>
       <div onClick={(e) => e.stopPropagation()} className={styles.BtnContainer}>
         <Counter initialValue={0} capacity={food.stockAmount} />
+        <SavedItem food={food} isSavedPage={isSavedPage}/>
         <BtnPrimary>Add to Cart</BtnPrimary>
-        {/* pass the food prop to the SavedItem component */}
-        <SavedItem food={food} />
       </div>
     </article>
   )
 }
 
-export default ProductCard
+export default SavedProductCard

@@ -1,23 +1,36 @@
 @use "../../styles/variables.scss" as v;
 
-.NavContainer {
-  display: flex;
-  width: 100%;
-  justify-content: flex-start;
-  gap: 3rem;
-  align-items: center;
+header {
+  background: green;
+  --mask:
+  radial-gradient(178.89px at 50% calc(100% - 240px),#000 99%,#0000 101%) calc(50% - 160px) 0/320px 100%,
+  radial-gradient(178.89px at 50% calc(100% + 160px),#0000 99%,#000 101%) 50% calc(100% - 80px)/320px 100% repeat-x;
+  mask: var(--mask);
+  height: 200px;
+  width: 100vw;
+}
 
-  .NavLink {
+.Container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+
+  .NavItem {
     text-decoration: none;
     font-size: 22px;
     position: relative;
     left: 20px;
-    top: 20px;
+    top: 0.5rem;
     margin-bottom: 0.2em;
     font-family: "Mulish", sans-serif;
     font-weight: bold;
+    color: white;
+    margin-inline-end: 2rem;
   }
 
   .CartContainer {
+    margin-left: auto;
+    padding: 20px;
   }
 }
