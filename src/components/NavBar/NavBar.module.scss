@@ -3,23 +3,20 @@
 
 .Header {
   background: v.$primary;
-  --mask:
-  radial-gradient(178.89px at 50% calc(100% - 240px),#000 99%,#0000 101%) calc(50% - 160px) 0/320px 100%,
-  radial-gradient(178.89px at 50% calc(100% + 160px),#0000 99%,#000 101%) 50% calc(100% - 80px)/320px 100% repeat-x;
-  mask: var(--mask);
-  height: 200px;
+  height: 80px;
   width: 100vw;
   position: relative;
   z-index: 10;
 
   &_expanded {
-    height: 75vh;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background: v.$primary;
     z-index: 100;
+    opacity: 95%;
 
     .DropdownMenuContainer {
       display: block;
@@ -44,7 +41,6 @@
 
   .NavItem {
     text-decoration: none;
-    font-size: 22px;
     position: relative;
     left: 10px;
     font-family: "Mulish", sans-serif;
@@ -90,8 +86,9 @@
         padding: 2rem 20px;
         text-decoration: none;
         color: white;
-        letter-spacing: 1.5px;
+        letter-spacing: 1.8px;
         font-size: v.$md;
+        font-family: "Poppins", sans-serif;
       }
     }
   }

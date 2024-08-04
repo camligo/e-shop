@@ -20,7 +20,7 @@ const SavedListPage = () => {
 
   return (
     <section className={styles.PageContainer}>
-      <h2>Saved Products</h2>
+      <h2 className={styles.Heading}>Saved Products</h2>
       <div className={styles.ListContainer}>
         {savedProducts.length > 0 ? (
           savedProducts.map((product) => (

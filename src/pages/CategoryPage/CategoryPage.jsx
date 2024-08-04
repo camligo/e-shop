@@ -3,11 +3,13 @@ import { getCategoryById, getFoodsByCategory } from "../../services/food-service
 import { useParams } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import styles from './CategoryPage.module.scss'
+import Modal from "../../components/Modal/Modal";
 
 const CategoryPage = () => {
   const { id } = useParams();
   const [category, setCategory] = useState(null);
   const [foods, setFoods] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -37,14 +39,30 @@ const CategoryPage = () => {
     return <div>Category not found</div>
   }
 
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProduct(null)
+  }
+
   return (
     <div className={styles.PageContainer}>
       <h1>{category.name}</h1>
       <div className={styles.ProductsContainer}>
         {foods.map(food => (
-          <ProductCard key={food.id} food={food} />
+          <ProductCard
+            key={food.id}
+            food={food}
+            onClick={() => handleProductClick(food)}
+          />
         ))}
       </div>
+      <Modal
+        product={selectedProduct}
+        onClose={handleCloseModal}
+      />
     </div>
   )
 }

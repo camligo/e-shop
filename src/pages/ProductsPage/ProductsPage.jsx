@@ -26,11 +26,18 @@ const ProductsPage = () => {
       {foods.length > 0 && (
         <div className={styles.ProductsContainer}>
           {foods.map((food) => (
-            <ProductCard key={food.id} food={food} onClick={() => handleProductClick(food)}/>
+            <ProductCard
+              key={food.id}
+              food={food}
+              onClick={() => handleProductClick(food)}
+            />
           ))}
         </div>
       )}
-      <Modal product={selectedProduct} onClose={handleCloseModal}/>
+      <Modal
+        product={selectedProduct}
+        onClose={handleCloseModal}
+      />
     </section>
   )
 }

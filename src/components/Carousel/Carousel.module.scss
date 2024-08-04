@@ -1,40 +1,54 @@
-.CarouselContainer {
+.Carousel {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
   width: 100%;
   position: relative;
+}
 
-  .CarouselContent {
-    width: 100%;
-    display: flex;
-    overflow: hidden;
+.CarouselContentWrapper {
+  overflow: hidden;
+  width: 50%;
+}
 
-    .CarouselInner {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+.CarouselContent {
+  display: flex;
+  align-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.CarouselItem {
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+  border-radius: 0.5rem;
+}
+
+.ArrowLeft {
+  height: 40px;
+  width: 40px;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid grey;
+  filter: drop-shadow(0 0 4px #55555578);
+
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
   }
+}
 
-  .CarouselItem {
-    flex: 1 0 33.33%;
-    max-width: 33.33%;
-    box-sizing: border-box;
-  }
+.ArrowRight {
+  height: 40px;
+  width: 40px;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid grey;
+  filter: drop-shadow(0 0 4px #55555578);
 
-  .BtnArrow {
-    height: 50px;
-    object-fit: contain;
-    background: transparent;
-    border: none;
-
-    .IconArrow {
-      height: 100%;
-
-      &:hover {
-        transform: scale(1.2);
-        transition: all 0.4s ease-in-out;
-      }
-    }
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
   }
 }

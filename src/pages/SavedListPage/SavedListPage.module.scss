@@ -1,13 +1,24 @@
+@use "../../styles/mixins.scss" as m;
+
 .PageContainer {
   display: flex;
   flex-direction: column;
   max-width: 80%;
   text-align: left;
 
+  .Heading {
+    padding-bottom: 20px;
+  }
+
+  @include m.phone {
+    max-width: 100%;
+  }
+
   .ListContainer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 1rem;
+    width: auto;
   }
 }

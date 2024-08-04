@@ -1,14 +1,15 @@
 @use "../../styles/variables.scss" as v;
+@use "../../styles/mixins.scss" as m;
 
 .CardContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   box-sizing: border-box;
   overflow: hidden;
-  height: 300px;
-  width: 180px;
+  height: 180px;
+  width: 500px;
   border-radius: 5px;
   box-shadow: 0px 2px 6px 0px rgba(69, 69, 69, 0.4);
   position: relative;
@@ -19,13 +20,33 @@
     transition: transform 0.2s ease-in-out;
   }
 
+  .CardHeading {
+    text-align: left;
+    width: 90%;
+  }
+
+  .CardContent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ProductInfo {
+    width: 60%;
+  }
+
+  @include m.phone {
+    width: 350px;
+  }
+
   .ImgContainer {
-    height: 100px;
+    height: 110px;
 
     .ProductImg {
       height: 100%;
       width: 100%;
-      object-fit: contain;
     }
   }
 
@@ -36,15 +57,16 @@
     width: 100%;
   }
 
-  .BtnClose {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: red;
-  border-radius: 5px;
+  .BtnRemove {
+  background: rgba(255, 0, 0, 0.8);
   color: white;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+  border-radius: 15px;
+  font-family: "Mulish", sans-serif;
+  margin-block: 0.5rem;
+  width: 80%;
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
   }
 }

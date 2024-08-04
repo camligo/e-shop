@@ -1,13 +1,7 @@
 .HomePage {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
 }
-
-.CategoriesContainer {
-  display: flex;
-  gap: 10px;
-}
-

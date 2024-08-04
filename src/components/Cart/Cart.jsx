@@ -1,16 +1,17 @@
+import { NavLink } from 'react-router-dom'
 import styles from './Cart.module.scss'
 
 const Cart = () => {
   return (
-    <div>
+    <NavLink to="/checkout">
       <button className={styles.CartIconContainer}>
         <img
-          src="public/cart-large.svg"
+          src="./cart-large.svg"
           alt="Shopping Cart"
           className={styles.CartIcon}
         />
       </button>
-    </div>
+    </NavLink>
   )
 }
 

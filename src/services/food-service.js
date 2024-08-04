@@ -89,3 +89,4 @@ export const getSavedProducts = async () => {
     const querySnapshot = await getDocs(savedProductsQuery);
     return querySnapshot.docs.map((doc => ({ id: doc.id, ...doc.data() })))
 }
+

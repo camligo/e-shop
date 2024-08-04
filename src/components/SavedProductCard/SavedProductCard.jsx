@@ -10,23 +10,29 @@ const SavedProductCard = ({ food, onRemove, isSavedPage }) => {
 
   return (
     <article className={styles.CardContainer}>
-      <button
-        className={styles.BtnClose}
-        onClick={handleRemove}>
-        x
-      </button>
-      <div className={styles.ImgContainer}>
-        <img
-          className={styles.ProductImg}
-          src={food.imageLink}
-          alt={food.name}
-        />
+      <div className={styles.CardHeading}>
+        <h3>{food.name} ${food.price}</h3>
       </div>
-      <h3>{food.name}</h3>
-      <div onClick={(e) => e.stopPropagation()} className={styles.BtnContainer}>
-        <Counter initialValue={0} capacity={food.stockAmount} />
-        <SavedItem food={food} isSavedPage={isSavedPage}/>
-        <BtnPrimary>Add to Cart</BtnPrimary>
+      <div className={styles.CardContent}>
+        <div className={styles.ImgContainer}>
+          <img
+            className={styles.ProductImg}
+            src={food.imageLink}
+            alt={food.name}
+          />
+        </div>
+        <div className={styles.ProductInfo}>
+          <div onClick={(e) => e.stopPropagation()} className={styles.BtnContainer}>
+            <Counter initialValue={0} capacity={food.stockAmount} />
+            <SavedItem food={food} isSavedPage={isSavedPage}/>
+            <BtnPrimary className={styles.LongCardBtn}>Add to Cart</BtnPrimary>
+            <button
+              className={styles.BtnRemove}
+              onClick={handleRemove}>
+              Remove
+            </button>
+          </div>
+        </div>
       </div>
     </article>
   )

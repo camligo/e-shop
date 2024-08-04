@@ -12,20 +12,16 @@ const HomePage = () => {
   }, [])
 
   return (
-    <div className={styles.HomePage}>
+    <section className={styles.HomePage}>
       <h1>Online Grocery Store</h1>
-      <div>
-        {categories.length > 0 && (
-          <div className={styles.CategoriesContainer}>
-            <Carousel>
-              {categories.map((category) => (
-                  <CategoryCard key={category.id} category={category}/>
-                ))}
-            </Carousel>
-          </div>
-        )}
-      </div>
-    </div>
+      {categories.length > 0 && (
+        <Carousel>
+          {categories.map((category) => (
+              <CategoryCard key={category.id} category={category}/>
+            ))}
+        </Carousel>
+      )}
+    </section>
   )
 }
 

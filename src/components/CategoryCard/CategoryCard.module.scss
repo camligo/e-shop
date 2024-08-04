@@ -1,23 +1,32 @@
+@use "../../styles/variables.scss" as v;
+
 .Card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 250px;
-  width: 250px;
   position: relative;
   text-align: center;
   justify-content: center;
   margin: 10px;
+  height: 400px;
+  width: 600px;
+  background: black;
+  border-radius: 5px;
 
   .Img {
-    height: 250px;
-    width: 250px;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    position: relative;
+    z-index: 1;
   }
 
   .Title {
     position: absolute;
     color: white;
     font-weight: bold;
+    z-index: 2;
+    font-size: v.$lg;
+    letter-spacing: 1.2px;
   }
 }
