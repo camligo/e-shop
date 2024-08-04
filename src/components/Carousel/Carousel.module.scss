@@ -1,3 +1,5 @@
+@use "../../styles/mixins.scss" as m;
+
 .Carousel {
   display: flex;
   justify-content: center;
@@ -8,7 +10,11 @@
 
 .CarouselContentWrapper {
   overflow: hidden;
-  width: 50%;
+  width: 60%;
+
+  @include m.phone {
+    width: 80%;
+  }
 }
 
 .CarouselContent {
@@ -29,13 +35,17 @@
   width: 40px;
   background: white;
   border-radius: 50%;
-  border: 1px solid grey;
+  border: 1px solid rgba(0, 0, 0, 0.238);
   filter: drop-shadow(0 0 4px #55555578);
-
 
   &:hover {
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
+  }
+
+  @include m.phone {
+    height: 30px;
+    width: 30px;
   }
 }
 
@@ -44,11 +54,16 @@
   width: 40px;
   background: white;
   border-radius: 50%;
-  border: 1px solid grey;
+  border: 1px solid rgba(0, 0, 0, 0.238);
   filter: drop-shadow(0 0 4px #55555578);
 
   &:hover {
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
+  }
+
+  @include m.phone {
+    height: 30px;
+    width: 30px;
   }
 }

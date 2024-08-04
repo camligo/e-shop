@@ -5,7 +5,7 @@ const CheckoutPage = () => {
 
   return (
     <section>
-      <h1>Your Shopping Cart:</h1>
+      <h2>Your Shopping Cart:</h2>
       <BtnPrimary>Checkout</BtnPrimary>
     </section>
   )

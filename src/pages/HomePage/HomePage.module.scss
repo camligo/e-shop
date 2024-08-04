@@ -1,7 +1,53 @@
+@use "../../styles/mixins.scss" as m;
+@use "../../styles/variables.scss" as v;
+
 .HomePage {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 100%;
+  margin-bottom: 2rem;
+
+  .MainHeading {
+    font-size: v.$xxl;
+    overflow: hidden;
+    width: 100%;
+    animation: moveAcrossPage 120s linear infinite;
+
+    @include m.phone {
+      font-size: v.$xl;
+      letter-spacing: 0;
+    }
+  }
+}
+
+@keyframes moveAcrossPage {
+  0% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(100vw); /* move out of view to the right */
+    opacity: 1;
+  }
+  49% {
+    transform: translateX(100vw); /* stay out of view on the right */
+    opacity: 0; /* make invisible */
+  }
+  50% {
+    transform: translateX(-100vw); /* jump to the left out of view */
+    opacity: 0; /* invisible */
+  }
+  51% {
+    transform: translateX(-100vw); /* stay out of view on left */
+    opacity: 0;
+  }
+  55% {
+    transform: translateX(-90vw); /* start moving back into view */
+    opacity: 1; /* make visible */
+  }
+  100% {
+    transform: translateX(0); /* move back to og position */
+    opacity: 1;
+  }
 }

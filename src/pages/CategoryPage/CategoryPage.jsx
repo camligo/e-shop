@@ -49,7 +49,7 @@ const CategoryPage = () => {
 
   return (
     <div className={styles.PageContainer}>
-      <h1>{category.name}</h1>
+      <h2>{category.name}</h2>
       <div className={styles.ProductsContainer}>
         {foods.map(food => (
           <ProductCard

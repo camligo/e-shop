@@ -22,7 +22,7 @@ const ProductsPage = () => {
 
   return (
     <section className={styles.PageContainer}>
-      <h1 className={styles.MainHeading}>All Products</h1>
+      <h2 className={styles.MainHeading}>All Products</h2>
       {foods.length > 0 && (
         <div className={styles.ProductsContainer}>
           {foods.map((food) => (
