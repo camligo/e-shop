@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Firestore config file
-./src/config/firestore.js
+src/config/firestore.js
