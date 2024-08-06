@@ -19,7 +19,9 @@ const Carousel = ({ children }) => {
         &lt;
       </button>
       <div className={styles.CarouselContentWrapper}>
-        <div className={styles.CarouselContent} style={{ transform: `translateX(-${slide * 100}%)`}}>
+        <div className={styles.CarouselContent}
+          style={{ transform: `translateX(-${slide * 100}%)`}}
+        >
           {children.map((item, index) => (
             <div
               key={index}

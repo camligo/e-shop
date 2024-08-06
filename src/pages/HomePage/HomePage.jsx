@@ -21,8 +21,8 @@ const HomePage = () => {
         {categories.length > 0 && (
           <Carousel>
             {categories.map((category) => (
-                <CategoryCard key={category.id} category={category}/>
-              ))}
+              <CategoryCard key={category.id} category={category}/>
+            ))}
           </Carousel>
         )}
       </section>
